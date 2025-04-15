@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">toDoList</string>
+    <string name="sample_task_title">Buy groceries</string>
+    <string name="sample_task_tasktask">Buy groceries for dinner chick pork and eggs</string>
+</resources>
