@@ -31,13 +31,15 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun TaskApp(){
+fun TaskApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "home"){
-        composable("home") { ListScreen(Modifier  ) }
+
+    NavHost(navController = navController, startDestination = "home") {
+        composable("home") { ListScreen(Modifier) }
         composable("AddScreen") { AddScreen(Modifier) }
     }
 }
+
 
 
 

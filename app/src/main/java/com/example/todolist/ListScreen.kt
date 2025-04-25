@@ -19,17 +19,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.todolist.model.Task
 
 @Composable
-fun ListScreen( modifier: Modifier) {
-
+fun ListScreen(modifier: Modifier) {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "home") {
-        composable("home") { ListScreen(modifier = Modifier,) }
-        composable("AddScreen") { AddScreen(modifier = Modifier) }
-    }
+
     Card(
         modifier = Modifier.fillMaxSize(),
-
-        ) {
+    ) {
         ElevatedButton(onClick = { navController.navigate("AddScreen") }) {
             Text("Add screen")
         }
@@ -40,6 +35,7 @@ fun ListScreen( modifier: Modifier) {
         ToDoCard()  something like that i think to populate it at least its 6 am i need to sleep
     }*/
 }
+
 
 
 @Composable
