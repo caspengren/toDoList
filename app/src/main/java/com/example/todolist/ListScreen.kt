@@ -62,13 +62,13 @@ fun ToDoCard(task: Task, modifier: Modifier = Modifier) {
                 Text(
                     modifier = Modifier
                         .padding(top = 8.dp, bottom = 8.dp),
-                    text = stringResource(id = task.taskTitle)
+                    text = task.taskTitle
                 )
             }
             Text(
                 modifier = Modifier
                     .padding(top = 8.dp, bottom = 8.dp),
-                text = stringResource(id = task.taskTask),
+                text = task.taskDescription,
             )
         }
     }//end of card

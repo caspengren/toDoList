@@ -1,17 +1,22 @@
 package com.example.todolist.model
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface TaskDao {
-    @Query("SELECT * FROM Task")
-    fun getAll(): List<Task>
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(task: Task)
 
-    @Insert
-    fun insertAll(vararg task: Task)
 
     @Delete
-    fun delete(task: Task)
+    suspend fun delete(task: Task)
+
+    @Query("SELECT * FROM Task ORDER BY id DESC")
+    fun getAllTasks(): Flow<List<Task>>
 }
