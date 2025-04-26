@@ -9,8 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.room.Room
-import com.example.todolist.model.TaskDatabase
+import com.example.todolist.model.AppDatabase
 import com.example.todolist.ui.theme.ToDoListTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,24 +18,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ToDoListTheme {
-                TaskApp()
+                val app = applicationContext as TodoDBApplication
+                val db = app.database
+                TaskApp(db)
             }
         }
-    }
-}
 
-
-
-
-
-
-@Composable
-fun TaskApp() {
-    val navController = rememberNavController()
-
-    NavHost(navController = navController, startDestination = "home") {
-        composable("home") { ListScreen(Modifier) }
-        composable("AddScreen") { AddScreen(Modifier) }
     }
 }
 
