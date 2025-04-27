@@ -10,6 +10,6 @@ data class Task(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
     val taskTitle: String,
-    val taskDescription: String
+    val taskDescription: String? = null
 )
 

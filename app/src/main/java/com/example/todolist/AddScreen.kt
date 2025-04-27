@@ -55,10 +55,10 @@ fun AddScreen(
         // Add Task Button
         Button(
             onClick = {
-                if (taskTitle.value.isNotBlank() && taskDescription.value.isNotBlank()) {
+                if (taskTitle.value.isNotBlank() ) {
                     val newTask = Task(
                         taskTitle = taskTitle.value,
-                        taskDescription = taskDescription.value
+                        taskDescription = taskDescription.value ?: null
                     )
 
                     // Insert the task into the database using a coroutine
