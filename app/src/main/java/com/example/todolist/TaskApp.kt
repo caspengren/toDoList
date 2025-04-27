@@ -20,6 +20,4 @@ fun TaskApp(dp: AppDatabase) {
         }
     }
 
-
-
 }

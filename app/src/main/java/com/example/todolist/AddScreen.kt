@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun AddScreen(
     modifier: Modifier = Modifier,
-        database: AppDatabase,
+    database: AppDatabase,
     navController: NavHostController
 ) {
     val taskTitle = remember { mutableStateOf("") }
@@ -76,5 +76,9 @@ fun AddScreen(
         ) {
             Text("Add Task")
         }
+
+        Button(
+            onClick = { navController.navigate("home") }
+        ) { Text("Go to List") }
     }
 }

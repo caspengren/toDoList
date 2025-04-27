@@ -37,7 +37,7 @@ fun ListScreen(
     navController: NavHostController
 ) {
 
-    val navController = rememberNavController()
+
     val taskDao = database.taskDao()
     val tasks by taskDao.getAllTasks().collectAsState(initial = emptyList())
 
@@ -60,9 +60,11 @@ fun ListScreen(
                     .fillMaxWidth()
                     .wrapContentSize(Alignment.Center)
             ) {
-                ElevatedButton(onClick = { navController.navigate("AddScreen/${database}") }) {
+                ElevatedButton(onClick = { navController.navigate("AddScreen") }) {
                     Text("AddScreen")
                 }
+
+
             }
 
             LazyColumn {
