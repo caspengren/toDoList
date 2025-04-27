@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+// how we talk to the db room implements everything for us
 @Dao
 interface TaskDao {
 

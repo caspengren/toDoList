@@ -11,6 +11,7 @@ import com.example.todolist.model.AppDatabase
 fun TaskApp(dp: AppDatabase) {
     val navController = rememberNavController()
 
+    //naviagtion set up
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
             ListScreen(modifier = Modifier, database = dp, navController = navController)

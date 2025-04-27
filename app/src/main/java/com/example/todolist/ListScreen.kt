@@ -61,13 +61,13 @@ fun ListScreen(
                     .wrapContentSize(Alignment.Center)
             ) {
                 ElevatedButton(onClick = { navController.navigate("AddScreen") }) {
-                    Text("AddScreen")
+                    Text("AddScreen") // go to the add task screen
                 }
 
 
             }
 
-            LazyColumn {
+            LazyColumn { //displays all of the tasks
                 items(tasks) { task ->
                     ToDoCard(task, Modifier.padding(8.dp), database)
                 }

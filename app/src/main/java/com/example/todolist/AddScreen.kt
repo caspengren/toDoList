@@ -78,7 +78,7 @@ fun AddScreen(
         }
 
         Button(
-            onClick = { navController.navigate("home") }
+            onClick = { navController.navigate("home") } // go back to home screen
         ) { Text("Go to List") }
     }
 }
